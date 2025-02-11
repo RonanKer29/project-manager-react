@@ -17,7 +17,7 @@ const ProjectsSidebar = ({
       </div>
 
       <ul className="mt-8">
-        {projects.map((projects) => {
+        {projects.map((project) => {
           let cssClasses =
             "w-full px-2 py-1 my-1 text-left rounded-sm  hover:text-stone-200 hover:bg-stone-800";
 
@@ -28,9 +28,12 @@ const ProjectsSidebar = ({
           }
 
           return (
-            <li key={projects.id}>
-              <button className={cssClasses} onClick={onSelectProject}>
-                {projects.title}
+            <li key={project.id}>
+              <button
+                className={cssClasses}
+                onClick={() => onSelectProject(project.id)}
+              >
+                {project.title}
               </button>
             </li>
           );
